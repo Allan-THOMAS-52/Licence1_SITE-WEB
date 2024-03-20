@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+<head>
+	<meta name="author" content="John Doe">
+	<meta charset="utf-8" />	 
+	<title>Animation of the solar system</title>
+	<link href="../Images/Home/fav.png" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" href="../CSS/Canvas.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+
+	
+</head>	
+<body onload="typeWriterCanvas()">
+	
+	<button onclick="topFunction()" id="myBtn" title="Go to top or bottom"></button>
+	
+	
+	<nav id="navbar">
+		<a href="../index.html"><i class="fa fa-home"></i> Home</a>
+		<a href="Mercury.html"><img src="../Images/Mercury/Full-Mercury.png" height="27" alt="Mercury"/> Mercury</a>
+		<a href="Venus.html"><img src="../Images/Venus/Capture.png" height="30" alt="Venus"/> Venus</a>		
+		<a href="Earth.html"><img src="../Images/Earth/1024px-The_Earth_seen_from_Apollo_17_(AS17-148-22727).png" height="30" alt="Earth"/> Earth</a>
+		<a href="Mars.html"><img src="../Images/Mars/Mars.png" height="32" alt="Mars"/>  Mars</a>			
+		<a href="Jupiter.html"><img src="../Images/Jupiter/Jupiter.png" height="30" alt="Jupiter"/> Jupiter</a>
+		<a href="Saturn.html"><img src="../Images/Saturn/Saturn_with_auroras.png" height="32" alt="Saturn"/> Saturn</a>
+		<a href="Uranus.html"><img src="../Images/Uranus/Uranus.png" height="30" alt="Uranus"/> Uranus</a>
+		<a href="Neptune.html"><img src="../Images/Neptune/Neptune.png" height="30" alt="Neptune"/> Neptune</a>
+	</nav>
+	
+	<div class="bgimg-1">
+		<div class="caption">
+			<span id="border1"></span>
+		</div>
+	</div>
+		
+	<br /><h3 class="tinypaccent">Basic simulation</h3><br />
+	
+	<section id="section1">
+	
+		<canvas id="canv" width="500" height="500"></canvas>
+			
+		<div id="canv1">
+					
+			<form action="traitement.php" method="post" id="form1">
+				<fieldset>
+					<legend>GUI</legend>
+					
+					<label for="SelectPlanet">Select a planet : </label><pre> </pre>
+					<select name="SelectPlanet" id="SelectPlanet">	
+						<option value="NaN" id="NaN" selected >None</option>
+						<option value="Ea" id="Ea">Earth</option>
+						<option value="Mo" id="Mo">Moon</option>
+					</select>
+					
+					<br /><br />
+					
+					<div id="speedDiv">
+						<label for="Eccent">Speed &#8712; [-5;5]  : </label><pre> </pre>
+						<input type="range" name="Eccent" id="Eccent" min="-5" max="5" step="0.01" value="0"  /><br />
+						<div id="speed">
+							<span>Current speed value : </span><span id="speedShow"> &#216; </span>
+							<span id="speedBase"> &#124; Base value : &#216; </span>
+						</div>
+					</div>
+					
+					<br /><br />
+					
+					<div id="colorDiv">			
+						<label for="ColorPl">Pick a color :</label><pre>  </pre><input type="color" name="ColorPl" id="ColorPl" />
+					</div>
+					
+					<br /><br />
+					
+					<div id="radio">
+						<input type="radio" name="shhi" value="Show"  id="Show" checked onchange="showPl()"/> <label for="Show">Show</label>
+						<input type="radio" name="shhi" value="Hide"  id="Hide" onchange="hidePl()" /> <label for="Hide">Hide</label>
+						<input type="button" value="Reset the Show/Hide function" onclick="resetShHi()" />
+					</div>
+					
+					<br /><br />
+
+					<span id="test">Please reload the page in order to reset above parameters !</span>
+									
+		<!------------------------------- no reset button because it doesn't "reload" javascript functions ------------------------>
+					
+				</fieldset>			
+			</form>
+		</div>	
+	</section>
+	
+	<br /><br /><br />
+	
+	<div id="sec1">
+		<h3>Explanation</h3>
+		
+		<p>You can see that we made something weird with the context and the drawing of planets and satellites. We don't 
+		place them like they position themselves around the sun. We place them on an axis, then we move the context in a way that
+		the upper left corner of the context in which we drew our objects is in the center of the visible frame. 
+		We do this because the angle around which the rotation will occur is the upper left corner of the context.</p>
+		
+		<p>The planet and its satellite are not placed in relation to their final position or to the sun's position.</p>
+		
+		<p>The variable "i" is a variable which will decrement each turn, it's with this variable that we are going to modify the rotation of the context.</p>
+	
+		<p>The animate() function :</p>
+	
+		<ul>
+			<li>Framework clearing ;</li>
+			<li>Black background setup ;</li>
+			<li>Drawing of the sun and the planet .</li>
+		</ul>
+		
+		<p>As you can see, we multiply the planets's speed by the variable "i", this allows to have a value for the angle.</p>
+		
+		<p>To draw the planet, we work in a different context from that in whichwe draw the sun but we restore it when we have finished drawing the planet.</p>
+		
+		<p>Drawing of the second planet and its satellite. Decrementation of "i" & end of the animate() function : 
+		we use a save(), while we have not restored the base context. So it's possible to use many saves and many restore. 
+		It's a system is said "by stacking". It means that when we use restore(), it is in relation to the last context that was saved.</p>		
+	</div>
+	
+	<br /><h3 class="tinypaccent">Advanced simulation</h3><br />
+	<section id="section2">
+	
+		<div id="CONTAINER" >					
+			<canvas id="LAYER_BACKGROUND_T6" width="500" height="500" ></canvas>		
+			<canvas id="LAYER_FOREGROUND_T6" width="500" height="500" ></canvas>				
+		</div>
+			
+		<div id="canv2">
+			
+			<div id="p2">
+				<p>Here you can see a more advanced simulation of the solar system, and the Mercury's rather eccentric orbit is drawn ( eccentricity : 0.205630 ).
+				Its orbital eccentricity is the largest of all known planets in the Solar System</p>
+					
+			</div>
+			<br />
+			<div id="p1">
+				<p>The planets are, in order from nearest to farthest of the sun : <a href="Mercury.html" target="_blank" >Mercury</a>, 
+				<a href="Venus.html"  target="blank">Venus</a>, <a href="Earth.html"  target="blank">Earth</a>,
+				<a href="Mars.html"  target="blank">Mars</a>, <a href="Jupiter.html" target="blank">Jupiter</a>, <a href="Saturn.html"  target="_blank">Saturn</a>,
+				<a href="Uranus.html"  target="blank">Uranus</a>, <a href="Neptune.html"  target="blank">Neptune</a>.</p>
+				<p><a href="https://en.wikipedia.org/wiki/Pluto" target="_blank" >Pluto</a> is not drawn as it is not considered a planet anymore, but a Dwarf planet.</p>		
+			</div>
+				
+		</div>	
+	</section>
+	<br /><br /><br />
+		
+	<div class="bgimg-2"></div>
+			
+	<footer class="container3">
+		<a href="../index.html" class="pagesuivante"><span class="bigger">&lArr;</span> Previous Page </a><pre>      </pre>
+		<a href="Mercury.html" class="pagesuivante">Next Page <span class="bigger">&rArr;</span></a>
+	</footer>
+	
+	
+	<script src="../JS/Canvas.js"></script>
+	<script src="../JS/BetterCanvas.js"></script>
+
+</body>
+</html>

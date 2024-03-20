@@ -1,0 +1,461 @@
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  scroll-behavior:smooth;
+  background-color:#343434;
+}
+
+@font-face {
+    font-family: 'Policesubtitle';
+    src: url('../Images/Font/nasalization-rg.otf');
+}
+
+@font-face {
+    font-family: 'Policespec';
+    src: url('../Images/Font/Dead_Revolution.otf');
+}
+
+@font-face {
+    font-family: 'Policetitle';
+    src: url('../Images/Font/Game_Of_Squids.ttf');
+}
+
+pre
+{
+	display:inline;
+}
+
+a 
+{
+color:#E47900 ;
+	text-decoration:none;
+}
+a:hover
+{
+	color:#D8EE67;
+}
+a:clicked
+{
+	color:#EBAD5F;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 24px "Policespec", sans-serif;
+  color: white;
+  text-align:center;
+  text-shadow:4px 4px 4px black;
+}
+
+h2
+{
+	letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 18px "Policesubtitle", sans-serif;
+  color:  white ;
+  text-align:center;
+  font-weight:bold;
+  text-shadow:4px 4px 4px black;
+}
+
+h4
+{
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 15px "Policetitle", sans-serif;
+  color:  white ;
+  text-align:center;
+  font-weight:bold;
+  text-shadow:4px 4px 4px black;
+}
+img
+{
+	border:2px outset grey;
+}
+
+video
+{
+	border:2px outset grey;
+}
+
+/*------------------------------------------------------CLASS--------------------------------------------------------------*/
+
+.bigger
+{
+	font-size:25px;
+	text-decoration:none;
+}
+
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  text-shadow:6px 6px 6px black;
+}
+
+.bgimg-1, .bgimg-2{
+  position: relative; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("../Images/Home/iss057e035382_lrg.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("../Images/Mercury/PIA13508.jpg");
+  min-height: 350px;
+}
+
+
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.tinyp
+{
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Policespec";
+  color: #E12F2F;
+  text-align:center;
+  padding-top:2px;
+}
+
+.container
+{
+	width:80%;	
+	margin:auto;
+	text-align:justify;
+	color:white;
+}
+
+.container2
+{
+	width:90%;	
+	margin:auto;
+	text-align:justify;	
+	display:flex;
+	justify-content: space-around;
+}
+
+.container3
+{	
+	text-align:center;
+	padding:25px ;
+	color:white;
+}
+
+.pagesuivante
+{
+	letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 20px "Policespec";
+    color: #FE0000;
+     
+}
+
+/*------------------------------------------------------ID--------------------------------------------------------------*/
+#border1
+{
+	font-family: 'Policetitle';
+	font-size:90px;
+	color:#F5F5F5 ;
+	padding: 18px;	
+	letter-spacing: 10px;
+	font-weight:bold;
+	animation: typing 4s steps(60, end);
+}
+
+nav img
+{
+	border:0px;
+	float:left;
+}
+
+/* Style the navbar */
+#navbar {
+  overflow: hidden;
+  background-color: black;
+  z-index:10;
+  display:flex;
+  flex-wrap:nowrap;
+  
+}
+
+/* Navbar links */
+#navbar a {
+  float: left;
+  display:block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none; 
+  width: 10%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+}
+
+#navbar a:hover
+{
+	transition:0.3s;
+	background-color:grey;
+}
+
+#navbar a:hover img
+{
+	transform: scale(1.5);
+	transition:0.5s;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #727272;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+#myBtn:active {
+  background-color: #555;
+  transform: translateY(4px);
+}
+
+#asidetxtimg
+{	
+	border:3px outset #D5D5D5;
+	margin-left:15px;
+	width:235px;
+	float:right;
+	height:290px;
+	font-size:14px;
+	text-align:center;
+}
+
+#asidetxtimg2
+{	
+	border:3px outset #D5D5D5;
+	margin-left:15px;
+	width:508px;
+	float:right;
+	height:400px;
+	font-size:14px;
+	text-align:center;
+}
+
+#asidetxtimg3
+{	
+	border:3px outset #D5D5D5;
+	margin-left:15px;
+	width:255px;
+	float:right;
+	height:310px;
+	font-size:14px;
+	text-align:center;
+}
+
+#asidetxtimg4
+{		
+	border:3px outset #D5D5D5;
+	margin-left:15px;
+	width:268px;
+	float:right;
+	height:240px;
+	font-size:14px;
+	text-align:center;	
+}
+
+#asidetxtimg5
+{		
+	border:3px outset #D5D5D5;
+	margin-left:15px;
+	width:250px;
+	float:right;
+	height:358px;
+	font-size:12px;
+	text-align:center;	
+}
+
+#asidetxtimg6
+{		
+	border:3px outset #D5D5D5;
+	margin-left:15px;
+	width:290px;
+	float:right;
+	height:270px;
+	font-size:14px;
+	text-align:center;	
+}
+
+#asidetxtimg7
+{		
+	border:3px outset #D5D5D5;
+	margin-left:15px;
+	width:290px;
+	float:right;
+	height:270px;
+	font-size:14px;
+	text-align:center;	
+}
+
+#asidetxtimg8
+{		
+	border:3px outset #D5D5D5;
+	margin-left:15px;
+	width:254px;
+	float:right;
+	height:320px;
+	font-size:14px;
+	text-align:center;	
+}
+
+#asidetxtimg9
+{		
+	border:3px outset #D5D5D5;
+	margin-left:15px;
+	width:255px;
+	float:right;
+	height:290px;
+	font-size:14px;
+	text-align:center;	
+}
+
+#asidetxtimg10
+{		
+	border:3px outset #D5D5D5;
+	margin-left:15px;
+	width:255px;
+	float:right;
+	height:345px;
+	font-size:14px;
+	text-align:center;	
+}
+
+#asidetxtimg11
+{		
+	border:3px outset #D5D5D5;
+	margin-left:15px;
+	width:300px;
+	float:right;
+	height:490px;
+	font-size:14px;
+	text-align:center;	
+}
+
+#asidetxtimg12
+{		
+	border:3px outset #D5D5D5;
+	margin-left:15px;
+	width:282px;
+	float:right;
+	height:287px;
+	font-size:14px;
+	text-align:center;	
+}
+
+#asidetxtimgleft
+{	
+	border:3px outset #D5D5D5;
+	margin-right:10px;
+	width:265px;
+	float:left;
+	height:240px;
+	font-size:14px;
+	text-align:center;
+}
+
+#asidetxtimgleft2
+{	
+	border:3px outset #D5D5D5;
+	margin-right:10px;
+	width:265px;
+	float:left;
+	height:260px;
+	font-size:14px;
+	text-align:center;
+}
+
+
+
+
+/* Slideshow container */
+.slideshow-container { 
+  position: relative;
+  padding-right:15px;
+  float:left;	
+}
+
+.slideshow-container p 
+{
+	margin:right;
+}
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

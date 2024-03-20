@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta name="author" content="Allan THOMAS"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>The Solar System</title>
+	<link href="Images/Home/fav.png" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="CSS/index.css" />
+    <link  rel="stylesheet"  href="https://unpkg.com/swiper/swiper-bundle.min.css"  />
+      
+</head>
+
+<body onload="typeWriterHome()">
+
+	<button onclick="topFunction()" id="myBtn" title="Go to top"></button>
+	
+	<nav>
+	  <div></div>
+	  
+	  <div class="nav-links">
+		<ul>
+		  <li>
+		  
+			<button onclick="document.getElementById('id02').style.display='block'" class="btn-gradient-border">Login</button>
+					
+			<div id="id02" class="modal">
+			  
+				<form class="modal-content2 animate" action="/action_page.php" method="post">
+					<div class="imgcontainer">
+						<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+						<img src="Images/Home/img_avatar2.png" alt="Avatar" class="avatar">
+					</div>
+					
+					<h3>Logging in...</h3>
+					
+					<div class="containerform3">						
+						<span>Username : </span><br /><input type="text" placeholder="Enter Username" name="uname2" id="uname2" required><br /><br />						  
+						<span>Password : </span><br /><input type="password" placeholder="Enter Password" name="psw2" id="psw2" required><br /><br />										  
+					</div>
+					<br />	
+					<button type="submit" class="login">Login</button><pre>   </pre>
+					<button type="reset" class="login">Reset</button><pre>   </pre>
+					<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button><br /><br />			
+				</form>
+			</div> </li>	
+		  		 
+		  <li>
+			<button onclick="document.getElementById('id01').style.display='block'" class="btn-gradient-border">Register</button>
+					
+			<div id="id01" class="modal">
+			  
+			  <form class="modal-content animate" action="/action_page.php" method="post">
+				<div class="imgcontainer">
+				  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+				  <img src="Images/Home/img_avatar2.png" alt="Avatar" class="avatar">
+				</div>
+				
+				<h3>Registering...</h3>
+				
+				<div>
+					<div class="container">
+						<div class="containerform">
+						
+							<span class="bold">Username : </span><input type="text" placeholder="Enter Username" name="uname" required  /><br />
+							<span class="bold">E-mail : </span><input type="email" placeholder="myEmail@gmail.com" name="mail" required /><br />
+		
+							<span class="bold">Password : </span>
+							<input type="password"  id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+							placeholder="Enter Password" required  minlength="8" /><br />
+							
+							<div id="message">
+							  <h4>Password requires :</h4>
+							  <p id="letter" class="invalid">A lowercase letter</p>
+							  <p id="capital" class="invalid">An uppercase letter</p>
+							  <p id="number" class="invalid">A number</p>
+							  <p id="length" class="invalid">Minimum 8 characters</p>
+							</div>
+					
+							<span class="bold">Don't have a password ? Try this : </span> 
+							<input type="text" name="pwdfield" placeholder="Create password" id="password" readonly />									 
+						
+							<br /><a class="btn-gradient-border3" onclick="genPassword()">Generate a password</a><br />
+							
+							
+						</div>
+						
+						<div class="containerform2">
+						
+							<p class="bold">Do you want to receive the News ?</p>										
+							<input type="radio" name="newsyn" value="Y"  id="Y" checked onclick="showElem()"/> <span>Yes </span><br />
+							<input type="radio" name="newsyn" value="N"  id="N"  onclick="hideElem()" /> <span> No</span><br />
+							<div id="myDIV">
+								<p class="bold">What type of News ?</p>
+								<input type="checkbox" name="newcont" id="newcont"   /> <span> New content </span> <br />
+								<input type="checkbox" name="upd" id="upd"  checked /> <span> A page has been updated </span> <br />
+							</div>
+							<p><span class="bold">Country of residence (optional) :</span></p>
+								<select name="country" id="country">
+									<option value="uk" id="uk">United-Kingdom</option>
+									<option value="gr" id="gr">Germany</option>
+									<option value="As" id="as">Australia</option>
+									<option value="F" id="fr">France</option>
+									<option value="It" id="it">Italia</option>
+									<option value="Jp" id="jp">Japan</option>
+									<option value="USA" id="usa">USA</option>
+									<option value="Oh" id="ot" >Other</option>
+								</select>
+								
+							<p><span class="bold">If you're living in another country, please tell us which one :</span></p>
+								<textarea name="otherCountr" id="otherCountr"></textarea>										
+						</div>
+					</div>
+					<br />
+					
+					<button type="submit" class="login">Register</button><pre>   </pre>
+					<button type="reset" class="login">Reset</button><pre>   </pre>
+					<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button><br /><br />
+					
+				</div>
+			  </form>
+			</div> </li>
+			
+		</ul>
+	  </div>
+	</nav>
+	
+	
+
+    <section id="sectionone" class="screen">
+      <div id="scene">
+        <div data-depth="0.1" class="bg">
+          <img src="Images/index/background.png" alt="" />
+        </div>
+        <div data-depth="0.2" class="rock1">
+          <img src="Images/index/rock.png" alt="" />
+        </div>
+        <div data-depth="1.2" class="earth">
+          <img src="Images/index/earth.png" alt="" />
+        </div>
+        <div data-depth="0.1" class="text">
+          <h1 id="border1"></h1>
+        </div>
+        <div data-depth="0.4" class="mid">
+          <img src="Images/index/mid.png" alt="" />
+        </div>
+        <div data-depth="0.1" class="fore">
+          <img src="Images/index/foreground.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+	<br />
+	<p class="centwh">Click on the name of the planet to go to the associated page on our website !</p>
+	<br />
+	
+    <section id="sectiontwo" class="screen">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- SLIDE ONE -->
+          <div class="swiper-slide">
+            <div class="slide-number">
+              <p><span><a href="HTML/Mercury.html" target="_blank">Mercury</a></span></p>
+            </div>
+            <div class="slide-text">
+              <h4><span></span></h4>
+            </div>
+            <div class="slide-detail">
+              <p>
+                <span> 
+				  Mercury is the closest planet to the Sun but, perhaps
+                  surprisingly, it does not have the highest temperatures. It is
+                  the second densest planet of the Solar System, but also the
+                  smallest planet. The structure of Mercury makes it the most
+                  similar planet to Earth.
+				  
+                </span>
+              </p>
+            </div>
+            <div class="slide-detail-facts">
+              <div>
+                <h5>
+                  ORBIT PERIOD:
+                  <span >87.97 Earth Days</span>
+                </h5>
+                <h5>KNOWN MOONS: <span >None</span></h5>
+              </div>
+            </div>
+            <div class="slide-img"></div>
+          </div>
+
+          <!-- 02 -->
+          <div class="swiper-slide">
+            <div class="slide-number">
+              <p><span><a href="HTML/Venus.html" target="_blank">Venus</a></span></p>
+            </div>
+            <div class="slide-text">
+              <h4><span></span></h4>
+            </div>
+            <div class="slide-detail">
+              <p>
+                <span
+                  >Venus is the second planet from the Sun and the
+                  sixth-largest. Together with Mercury, they are the only
+                  planets without a satellite, even though Mercury is closer to
+                  the sun, Venus is the hottest planet.
+                </span>
+              </p>
+            </div>
+            <div class="slide-detail-facts">
+              <div>
+                <h5>
+                  ORBIT PERIOD:
+                  <span >224.70 Earth days</span>
+                </h5>
+                <h5>KNOWN MOONS: <span >None</span></h5>
+              </div>
+            </div>
+            <div class="slide-img"></div>
+          </div>
+
+          <!-- 03 -->
+          <div class="swiper-slide">
+            <div class="slide-number">
+              <p><span><a href="HTML/Earth.html" target="_blank">Earth</a></span></p>
+            </div>
+            <div class="slide-text">
+              <h4><span></span></h4>
+            </div>
+            <div class="slide-detail">
+              <p>
+                <span
+                  >Earth is the third planet from the Sun and the fifth largest
+                  planet in the Solar System with the highest density. It is
+                  currently the only known location where life is present.
+                </span>
+              </p>
+            </div>
+            <div class="slide-detail-facts">
+              <div>
+                <h5>
+                  ORBIT PERIOD:
+                  <span >365.26 Earth days</span>
+                </h5>
+                <h5>KNOWN MOONS: <span >1</span></h5>
+              </div>
+            </div>
+            <div class="slide-img"></div>
+          </div>
+
+          <!-- 04 -->
+          <div class="swiper-slide">
+            <div class="slide-number">
+              <p><span><a href="HTML/Mars.html" target="_blank">Mars</a></span></p>
+            </div>
+            <div class="slide-text">
+              <h4><span></span></h4>
+            </div>
+            <div class="slide-detail">
+              <p>
+                <span
+                  >Mars is the fourth planet from the Sun and the
+                  second-smallest planet with a thin atmosphere, having the
+                  surface features reminiscent both of the impact craters of the
+                  Moon, and the valleys, deserts and polar ice caps of Earth.
+                </span>
+              </p>
+            </div>
+            <div class="slide-detail-facts">
+              <div>
+                <h5>
+                  ORBIT PERIOD:
+                  <span >686.98 Earth days</span>
+                </h5>
+                <h5>KNOWN MOONS: <span >2</span></h5>
+              </div>
+            </div>
+            <div class="slide-img"></div>
+          </div>
+
+          <!-- 05 -->
+          <div class="swiper-slide">
+            <div class="slide-number">
+              <p><span><a href="HTML/Jupiter.html" target="_blank">Jupiter</a></span></p>
+            </div>
+            <div class="slide-text">
+              <h4><span></span></h4>
+            </div>
+            <div class="slide-detail">
+              <p>
+                <span
+                  >Jupiter is the fifth planet from the Sun and the largest
+                  planet of the Solar System. It is the oldest planet of the
+                  Solar System thus it was the first to take shape out of the
+                  remains of the solar nebula.
+                </span>
+              </p>
+            </div>
+            <div class="slide-detail-facts">
+              <div>
+                <h5>
+                  ORBIT PERIOD:
+                  <span >4,332.82 Earth days</span>
+                </h5>
+                <h5>KNOWN MOONS: <span >67</span></h5>
+              </div>
+            </div>
+            <div class="slide-img"></div>
+          </div>
+
+          <!-- 06 -->
+
+          <div class="swiper-slide">
+            <div class="slide-number">
+              <p><span><a href="HTML/Saturn.html" target="_blank">Saturn</a></span></p>
+            </div>
+            <div class="slide-text">
+              <h4><span></span></h4>
+            </div>
+            <div class="slide-detail">
+              <p>
+                <span
+                  >Saturn is the sixth planet from the Sun, with the largest
+                  planetary rings in the Solar System. It is the second-largest
+                  planet after Jupiter, and recently, with many other moons
+                  being discovered, it surpassed the number of Jupiter’s moons.
+                </span>
+              </p>
+            </div>
+            <div class="slide-detail-facts">
+              <div>
+                <h5>
+                  ORBIT PERIOD:
+                  <span >10,755.70 Earth days</span>
+                </h5>
+                <h5>KNOWN MOONS: <span >62</span></h5>
+              </div>
+            </div>
+            <div class="slide-img"></div>
+          </div>
+
+          <!-- 07 -->
+
+          <div class="swiper-slide">
+            <div class="slide-number">
+              <p><span><a href="HTML/Uranus.html" target="_blank">Uranus</a></span></p>
+            </div>
+            <div class="slide-text">
+              <h4><span></span></h4>
+            </div>
+            <div class="slide-detail">
+              <p>
+                <span
+                  >Uranus is the seventh planet discovered in the Solar System
+                  that also led to the discovery of the last planet, Neptune
+                  they are both referred to as ice giants.
+                </span>
+              </p>
+            </div>
+            <div class="slide-detail-facts">
+              <div>
+                <h5>
+                  ORBIT PERIOD:
+                  <span >30,687.15 Earth days</span>
+                </h5>
+                <h5>KNOWN MOONS: <span >27</span></h5>
+              </div>
+            </div>
+            <div class="slide-img"></div>
+          </div>
+
+          <!-- 08 -->
+
+          <div class="swiper-slide">
+            <div class="slide-number">
+              <p><span><a href="HTML/Neptune.html" target="_blank">Neptune</a></span></p>
+            </div>
+            <div class="slide-text">
+              <h4><span></span></h4>
+            </div>
+            <div class="slide-detail">
+              <p>
+                <span
+                  >Neptune is the fourth largest and the farthest planet of the
+                  Solar System with the most powerful wind speeds out of all the
+                  planets. It is the smallest of the gas giants.
+                </span>
+              </p>
+            </div>
+            <div class="slide-detail-facts">
+              <div>
+                <h5>
+                  ORBIT PERIOD:
+                  <span >60,190.03 Earth days</span>
+                </h5>
+                <h5>KNOWN MOONS: <span >14</span></h5>
+              </div>
+            </div>
+            <div class="slide-img"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDER LINKS -->
+      <div>
+        <div class="rockbg1">
+          <img src="Images/index/rock.png" alt="">
+        </div>
+        <div class="planet-links"></div>
+      </div>
+    </section>
+
+	
+
+
+	<br /><br /><br />
+	
+	<p class="centwh">We made a simulation of the Solar System ! Have a look : <a href="HTML/Canvas.html" target="_blank" >Simulation</a></p>
+	<br /><br />
+	<p class="centwh">Want to know the actual date ? Click here :   <button type="button" onclick="document.getElementById('demo').innerHTML = Date()"> Date</button></p>						
+	<p id="demo" class="centwh"></p>
+
+	<br /><br />
+
+	
+	<footer class="container3">		
+		<a href="HTML/Mercury.html" class="pagesuivante">Next Page <span class="bigger">&rArr;</span></a>
+	</footer>
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="JS/index.js" ></script>
+	<script src="Js/jsForm.js" ></script>	
+	
+  </body>
+</html>
